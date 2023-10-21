@@ -23,7 +23,7 @@ const  HomePage = async () => {
     <TaskCard tasks={tasks} key={tasks.id} />
     
        </section>
-    </>
+    </> 
   ) 
 }
 
