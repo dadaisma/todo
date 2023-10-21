@@ -12,6 +12,8 @@ const data = await prisma.task.findMany()
 return data
 }
 
+export const revalidate = 60;
+
 const  HomePage = async () => {
   const tasks = await loadTask()
   return (
