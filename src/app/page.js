@@ -8,7 +8,7 @@ async function loadTask() {
 //with fetch
  const res = await fetch("https://todo-dadaisma.vercel.app/api/task/")
 const data = await res.json()
-//console.log(data)
+console.log(data)
 return data
 }
 
