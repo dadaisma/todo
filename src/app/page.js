@@ -12,7 +12,7 @@ const data = await res.json()
 return data
 }
 
-export const revalidate = 2;
+//export const revalidate = 2;
 
 const  HomePage = async () => {
   const tasks = await loadTask()
