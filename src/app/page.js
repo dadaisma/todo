@@ -4,11 +4,12 @@ import TaskCard from '@/components/TaskCard'
 
 async function loadTask() {
 //with prisma
-//const data = await prisma.task.findMany()
+const data = await prisma.task.findMany()
 //with fetch
- const res = await fetch("https://todo-dadaisma.vercel.app/api/task/")
-const data = await res.json()
-console.log(data)
+// const res = await 
+//fetch("https://todo-dadaisma.vercel.app/api/task/")
+//const data = await res.json()
+//console.log(data)
 return data
 }
 
