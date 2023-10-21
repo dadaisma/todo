@@ -6,7 +6,7 @@ async function loadTask() {
 //with prisma
 //const data = await prisma.task.findMany()
 //with fetch
- const res = await fetch(WEB.env)
+ const res = await fetch("https://todo-dadaisma.vercel.app/api/task/")
 const data = await res.json()
 //console.log(data)
 return data
