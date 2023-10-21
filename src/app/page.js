@@ -4,10 +4,10 @@ import TaskCard from '@/components/TaskCard'
 
 async function loadTask() {
 //with prisma
-const data = await prisma.task.findMany()
+//const data = await prisma.task.findMany()
 //with fetch
-  //const res = await fetch('http://localhost:3000/api/task/')
-//const data = await res.json()
+ const res = await fetch(WEB.env)
+const data = await res.json()
 //console.log(data)
 return data
 }
