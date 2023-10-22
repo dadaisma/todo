@@ -55,11 +55,19 @@ useEffect(()=>{
     router.push('/')
   };
 
-const eliminarTarea = () => {
-  fetch(`/api/task/${params.id}`, {
-    method: "DELETE",
-}), router.refresh()
-router.push('/')}
+  const eliminarTarea = async () => {
+    try {
+      await fetch(`/api/task/${params.id}`, {
+        method: "DELETE",
+      });
+  
+      // After the DELETE request is completed, trigger a refresh and navigate to the desired page.
+      await router.refresh();
+      await router.push('/');
+    } catch (error) {
+      console.error('Error deleting task:', error);
+    }
+  };
 
   const handleTitleChange = (e) => {
     setTitle(e.target.value);
