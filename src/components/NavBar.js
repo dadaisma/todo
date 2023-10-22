@@ -10,7 +10,7 @@ export default function NavBar() {
         <div className="z-45 h-16 bg-slate-800 flex justify-between  ">
           <Link href='/'>
             <h3 className="hover:text-green-500 text-green-200 p-2">Panel de Tareas</h3>
-           <p className="text-sm ml-2">Nextjs 13 CRUD with prisma & postgres</p> 
+           <p className="text-sm ml-2">Nextjs 13 CRUD with Prisma & PlatetScale</p> 
           </Link>
         
       <div className="flex justify-between items-center">
