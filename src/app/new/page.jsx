@@ -23,37 +23,45 @@ useEffect(()=>{
 
 },[])
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+const handleSubmit = async (e) => {
+  e.preventDefault();
 
-    if(params.id) { 
-     
-    const res = await fetch(`/api/task/${params.id}`, {
-      method: "PATCH",
-      body: JSON.stringify({ title, description }),
-      headers: {
-        "Content-Type": "application/json",
-      },
-    });
-    resetTarea();
-    const data = await res.json();
-   // console.log(data);
-   }
-   else { 
-    const res = await fetch("/api/task", {
-      method: "POST",
-      body: JSON.stringify({ title, description }),
-      headers: {
-        "Content-Type": "application/json",
-      },
-    });
-    resetTarea();
-  //  const data = await res.json();
-   // console.log(data);
-   }
-   router.refresh()
-    router.push('/')
-  };
+  if (params.id) {
+    try {
+      const res = await fetch(`/api/task/${params.id}`, {
+        method: "PATCH",
+        body: JSON.stringify({ title, description }),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+      resetTarea();
+      // You can choose to handle the response data here, if needed.
+      // const data = await res.json();
+    } catch (error) {
+      console.error('Error updating task:', error);
+    }
+  } else {
+    try {
+      const res = await fetch("/api/task", {
+        method: "POST",
+        body: JSON.stringify({ title, description }),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+      resetTarea();
+      // You can choose to handle the response data here, if needed.
+      // const data = await res.json();
+    } catch (error) {
+      console.error('Error creating task:', error);
+    }
+  }
+
+  // After the request is completed, trigger a refresh and navigate to the desired page.
+  await router.refresh();
+  await router.push('/');
+};
 
   const eliminarTarea = async () => {
     try {
