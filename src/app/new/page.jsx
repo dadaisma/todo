@@ -58,9 +58,11 @@ const handleSubmit = async (e) => {
     }
   }
 
-  // After the request is completed, trigger a refresh and navigate to the desired page.
-  await router.refresh();
-  await router.push('/');
+  setTimeout(async () => {
+    await router.refresh();
+    await router.push('/');
+  }, 3000); // 2000 milliseconds = 2 seconds
+}
 };
 
   const eliminarTarea = async () => {

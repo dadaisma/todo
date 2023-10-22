@@ -2,6 +2,7 @@ import React from 'react'
 import { prisma } from '@/libs/prisma'
 import TaskCard from '@/components/TaskCard'
 
+
 //async function loadTask() {
 //with prisma
 //return await prisma.task.findMany()
@@ -13,10 +14,12 @@ import TaskCard from '@/components/TaskCard'
 //return data
 //}
 
-export const revalidate = 10;
+export const revalidate = 2;
 
 const  HomePage = async () => {
+  
   const tasks = await prisma.task.findMany()
+  
   return (
     <>
     <section className='container mx-auto'>
