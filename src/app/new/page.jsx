@@ -16,7 +16,7 @@ useEffect(()=>{
   .then(data => {
     setTitle(data.title)
     setDescription(data.description)
-   // console.log(data);
+  // console.log(data);
   })
  }
 
