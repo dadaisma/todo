@@ -56,13 +56,13 @@ const handleSubmit = async (e) => {
     } catch (error) {
       console.error('Error creating task:', error);
     }
-  }
+  }  
 
   // After the request is completed, trigger a refresh and navigate to the desired page.
-  setTimeout(async () => {
+ 
   await router.refresh();
   await router.push('/');
-}, 3000);
+
 };
 
   const eliminarTarea = async () => {

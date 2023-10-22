@@ -14,7 +14,7 @@ import TaskCard from '@/components/TaskCard'
 //return data
 //}
 
-export const revalidate = 2;
+export const revalidate = 0;
 
 const  HomePage = async () => {
   
